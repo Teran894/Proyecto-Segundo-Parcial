@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani" rel="stylesheet">
+  <title>Lista de notas: To-Do </title>
+</head>
+
+<body>
+
+  <header>
+  </header>
+
+  <main>
+
+    <div id="tasks">
+      <h1>TO-DO List [Tareas por hacer]</h1>
+
+      <button id="addTask" class="btn-action">CREAR NOTA</button>
+
+    </div>
+    <br>
+
+    <form id="filter-form" class="filter-section">
+
+      <select id="task-filter" class="filter-field" placeholder="Notas actuales">
+        <option value="" selected>Todas las notas</option>
+
+      </select>
+
+      <input type="text" id="title-filter" placeholder="Titulo" class="filter-field">
+
+      <select id="priority-filter" class="filter-field" placeholder="Prioridad">
+        <option value="" selected>Prioridad</option>
+        <option value="Alta">Alta</option>
+        <option value="Media">Media</option>
+        <option value="Baja">Baja</option>
+
+      </select>
+
+      <input type="text" id="tag-filter" placeholder="Etiqueta" class="filter-field">
+
+      <select type="text" id="completed-filter" placeholder="completed" class="filter-field">
+        <option value="" selected>Status</option>
+        <option value="false">false</option>
+        <option value="true">true</option>
+      </select>
+
+      <input type="date" id="date-filter" placeholder="Fecha" class="filter-field">
+
+      <button type="submit" id="apply-filters" class="btn-submit">CONSULTAR</button>
+      <button type="reset" id="reset-filters" class="btn">RECARGAR</button>
+
+    </form>
+
+    <br>
+
+    <div class="table-container">
+
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>No. Nota</th> <!-- No. Nota -->
+            <th>Titulo</th> <!-- Titulo -->
+            <th>Descripcion</th> <!-- Descripcion -->
+            <th>Completed</th> <!-- Completed -->
+            <th>Prioridad</th> <!-- Proridad -->
+            <th>Fecha de Vencimiento</th> <!-- Fecha de Vencimiento -->
+            <th>Etiqueta</th> <!--  Etiqueta -->
+
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="data-table-body">
+          <!-- Llenaremos la tabla con datos consumidos desde una api -->
+        </tbody>
+      </table>
+    </div>
+
+    <div id="message" class="message">
+      <p>No se han realizado notas.</p>
+    </div>
+
+    <div id="modal-background" class="modal-background">
+
+    </div>
+
+    <div id="modal" class="modal">
+
+      <h2>NUEVA NOTA</h2>
+
+      <form id="task-form" class="form-section">
+
+        <label for="title-field">Titulo:</label>
+        <input type="text" id="title-field" class="form-field" required>
+
+        <label for="description-field">Descripcion:</label>
+        <input type="text" id="description-field" class="form-field" required>
+
+        <label for="completed">Completed:</label>
+        <select id="completed-field" class="form-field" required>
+          <option value="false" selected>false</option>
+          <option value="true">true</option>
+        </select>
+
+        <label for="priority-field">Prioridad:</label>
+        <select id="priority-field" class="form-field" required>
+          <option value="Alta" selected>Alta</option>
+          <option value="Media">Media</option>
+          <option value="Baja">Baja</option>
+        </select>
+
+        <label for="dueDate-field">Fecha de Entrega:</label>
+        <input type="date" id="dueDate-field" class="form-field" required>
+
+        <label for="tag-field">Etiqueta:</label>
+        <input type="text" id="tag-field" class="form-field" required>
+
+
+        <button type="submit" class="btn-submit">Guardar Nota</button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <script src="./assets/js/utils.js"></script>
+  <script src="./assets/js/fetch-api.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
